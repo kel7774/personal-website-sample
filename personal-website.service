@@ -1,0 +1,16 @@
+[Unit]
+Description=Kel Landry Personal Website
+After=network.target
+
+[Service]
+Type=simple
+User=exedev
+WorkingDirectory=/home/exedev/personal-website
+ExecStart=/usr/bin/npm run start -- -p 3000
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
